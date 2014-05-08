@@ -82,7 +82,7 @@ class Game {
 
 	public void update(GameContainer container, int delta) throws SlickException{
 		if(!disabled){
-			speed = (int) Math.floor(score / 200) + 1;
+			speed = (int) Math.floor(score / 150) + 1;
 			if (speed > 10) {
 				speed = 10;
 			}
@@ -146,9 +146,9 @@ class Game {
 
 	private void checkForCollisions() {
 		for (Fruit fruit : fruits) {
-			if (basket.y + basket.height / 1.1 <= fruit.y + fruit.height * 5 &&
-				fruit.x <= basket.x + basket.width * 5 &&
-				fruit.x + fruit.width * 5 >= basket.x
+			if (basket.y + (basket.height - 10) * basket.SCALE <= fruit.y + fruit.height * fruit.SCALE &&
+				fruit.x <= basket.x + basket.width * basket.SCALE &&
+				fruit.x + fruit.width * fruit.SCALE >= basket.x
 				) 
 			{
 				if (fruit instanceof Pinecone) {

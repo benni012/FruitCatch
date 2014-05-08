@@ -8,6 +8,8 @@ class Pear extends Fruit {
 		try {
 			img = new Image("../res/Pear.png");
 			img.setFilter(Image.FILTER_NEAREST);
+			width = img.getWidth();
+			height = img.getHeight();
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}

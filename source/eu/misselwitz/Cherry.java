@@ -8,6 +8,8 @@ class Cherry extends Fruit {
 		try {
 			img = new Image("../res/Cherry.png");
 			img.setFilter(Image.FILTER_NEAREST);
+			width = img.getWidth();
+			height = img.getHeight();
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}

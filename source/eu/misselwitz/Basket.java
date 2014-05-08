@@ -1,5 +1,3 @@
-// TODO: Change hard-coded image sizes
-
 package eu.misselwitz;
 
 import org.newdawn.slick.*;
@@ -13,6 +11,7 @@ class Basket {
 	int width = 97;
 	int height = 45;
 	int hp = 6;
+	final float SCALE = 1.5f;
 
 	int speed = 5;
 
@@ -26,7 +25,7 @@ class Basket {
 	}
 
 	public void render(GameContainer container, Graphics g) throws SlickException{
-		img.draw(x, y, 1.5f);
+		img.draw(x, y, SCALE);
 	}
 
 	public void update(GameContainer container, int delta) throws SlickException{
@@ -58,7 +57,7 @@ class Basket {
 	}
 
 	boolean isValidPosForBasket(float x, float y) {
-		if (isValidPos(x, y) && isValidPos(x + width * 1.5f, y)) {
+		if (isValidPos(x, y) && isValidPos(x + width * SCALE, y)) {
 			return true;
 		}
 		return false;

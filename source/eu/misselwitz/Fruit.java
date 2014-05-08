@@ -7,8 +7,9 @@ abstract class Fruit {
 	float x, y;
 	int speed = 2;
 	Image img;
-	int width = 21;
-	int height = 21;
+	int width;
+	int height;
+	final float SCALE = 5f;
 
 	boolean dead = false;
 	boolean hurt = false;
@@ -27,6 +28,6 @@ abstract class Fruit {
 	}
 
 	public void render(GameContainer container, Graphics g) throws SlickException{
-		img.draw(x, y, 5f);
+		img.draw(x, y, SCALE);
 	}
 }
