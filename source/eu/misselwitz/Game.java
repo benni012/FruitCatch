@@ -97,8 +97,9 @@ class Game {
 
 			time += delta;
 
-			// Generate the Fruits (Every 3 seconds)
-			if (time >= 3000) {
+			// Generate the Fruits, based n the speed
+			// 
+			if (time >= 5000 / speed) {
 				time = 0;
 				switch ((int) Math.ceil(Math.random() * 4)) {
 					case 1:
